@@ -5,8 +5,8 @@ import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 
 // https://vite.dev/config/
 export default defineConfig({
-  // 使用 '/' 以便在 Vercel 上正确加载资源
-  base: '/',
+  // 使用相对路径 './' 以便在 Gitee Pages 上正确加载资源
+  base: './',
   build: {
     sourcemap: false,
   },
