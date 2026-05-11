@@ -8,7 +8,7 @@ export default defineConfig({
   // 使用 '/' 以便在 Vercel 上正确加载资源
   base: '/',
   build: {
-    sourcemap: 'hidden',
+    sourcemap: false,
   },
   plugins: [
     react({
