@@ -1,0 +1,31 @@
+企业官网展示图片 — 使用说明
+================================
+
+1. 把图片文件放到本目录下的子文件夹（建议 webp / jpg / png）：
+   - cases\     客户案例配图
+   - team\      关于我们 — 团队成员头像
+   - gallery\   首页「影像展示」区块
+
+2. 打开项目里的 src\content\site-media.json ，按下列格式增删条目（路径始终以 /site-media/ 开头）：
+
+   案例图（键名与 mockData 里案例 id 一致，如 case-projector）：
+   "caseImages": {
+     "case-projector": "/site-media/cases/你的文件名.webp"
+   }
+
+   成员头像（键名与 mockData 里 teamMembers.id 一致，如 tm-1）：
+   "teamAvatars": {
+     "tm-1": "/site-media/team/zhang.webp"
+   }
+
+   首页画廊（ whole array，删掉整条即可去掉一张图）：
+   "gallery": [
+     { "src": "/site-media/gallery/产线.webp", "alt": "生产车间", "caption": "可选说明文字" }
+   ]
+
+   首页首屏背景（不需要则填 null）：
+   "heroBackground": "/site-media/gallery/hero-bg.webp"
+
+3. 删除图片：先从 site-media.json 里删掉对应项，再删除磁盘上的文件。
+
+4. 改完后执行 npm run build 重新部署即可。

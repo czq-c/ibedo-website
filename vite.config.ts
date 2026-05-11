@@ -5,6 +5,8 @@ import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 
 // https://vite.dev/config/
 export default defineConfig({
+  // 使用 '/' 以便托管在域名根路径（Vercel / 多数 CDN）时，刷新子路由仍能正确加载 /assets/*
+  base: '/',
   build: {
     sourcemap: 'hidden',
   },

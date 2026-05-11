@@ -1,11 +1,24 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { companyInfo } from "@/data/mockData";
+import { getHeroBackground } from "@/lib/siteMedia";
 
 export default function Hero() {
+  const heroBg = getHeroBackground();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#0f2744] to-[#0a1628]" />
+      {heroBg ? (
+        <div className="absolute inset-0">
+          <img
+            src={heroBg}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/90 via-[#0f2744]/85 to-[#0a1628]/90" />
+        </div>
+      ) : null}
       
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0066ff]/20 rounded-full blur-3xl animate-pulse" />

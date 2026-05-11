@@ -1,14 +1,67 @@
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { supportDocs } from "@/data/mockData";
+import type { SupportDoc } from "@/types";
 import { FileText, Download, Book, Code, HelpCircle, ChevronDown } from "lucide-react";
 
 const categoryConfig = {
-  manual: { name: '产品手册', icon: FileText, color: 'text-[#0066ff]', bgColor: 'bg-[#0066ff]/10' },
-  sdk: { name: 'SDK下载', icon: Download, color: 'text-[#00d4ff]', bgColor: 'bg-[#00d4ff]/10' },
-  api: { name: 'API文档', icon: Code, color: 'text-[#8844ff]', bgColor: 'bg-[#8844ff]/10' },
-  faq: { name: '常见问题', icon: HelpCircle, color: 'text-[#ff6b35]', bgColor: 'bg-[#ff6b35]/10' },
+  manual: { name: "产品手册", icon: FileText, color: "text-[#0066ff]", bgColor: "bg-[#0066ff]/10" },
+  sdk: { name: "SDK下载", icon: Download, color: "text-[#00d4ff]", bgColor: "bg-[#00d4ff]/10" },
+  api: { name: "API文档", icon: Code, color: "text-[#8844ff]", bgColor: "bg-[#8844ff]/10" },
+  faq: { name: "常见问题", icon: HelpCircle, color: "text-[#ff6b35]", bgColor: "bg-[#ff6b35]/10" },
 };
+
+function isReadyDownloadUrl(url: string | undefined): url is string {
+  return !!url && url !== "#" && url.trim().length > 0;
+}
+
+function SupportDocRow({
+  doc,
+  categoryKey,
+}: {
+  doc: SupportDoc;
+  categoryKey: keyof typeof categoryConfig;
+}) {
+  const config = categoryConfig[categoryKey];
+  const Icon = config.icon;
+  const ready = isReadyDownloadUrl(doc.downloadUrl);
+
+  const inner = (
+    <>
+      <div className={`w-12 h-12 rounded-xl ${config.bgColor} flex items-center justify-center`}>
+        <Icon className={`w-6 h-6 ${config.color}`} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <h4 className="font-semibold text-gray-900 group-hover:text-[#0066ff] transition-colors">
+          {doc.title}
+        </h4>
+        <p className="text-sm text-gray-500">{doc.description}</p>
+        {!ready && (
+          <p className="text-xs text-amber-700/90 mt-1">文档尚未上传，请邮件联系技术支持获取</p>
+        )}
+      </div>
+      {ready ? (
+        <Download className="w-5 h-5 text-gray-400 group-hover:text-[#0066ff] transition-colors flex-shrink-0" />
+      ) : (
+        <span className="text-xs text-gray-400 flex-shrink-0 whitespace-nowrap">敬请期待</span>
+      )}
+    </>
+  );
+
+  const className =
+    "flex items-center gap-4 p-4 bg-gray-50 rounded-xl transition-colors group " +
+    (ready ? "hover:bg-gray-100 cursor-pointer" : "cursor-default opacity-95");
+
+  if (ready) {
+    return (
+      <a href={doc.downloadUrl} target="_blank" rel="noopener noreferrer" className={className}>
+        {inner}
+      </a>
+    );
+  }
+
+  return <div className={className}>{inner}</div>;
+}
 
 const faqs = [
   {
@@ -93,54 +146,20 @@ export default function SupportPage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">产品手册</h2>
               <div className="space-y-4">
-                {groupedDocs.manual.map((doc) => {
-                  const config = categoryConfig.manual;
-                  const Icon = config.icon;
-                  return (
-                    <a
-                      key={doc.id}
-                      href={doc.downloadUrl}
-                      className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group"
-                    >
-                      <div className={`w-12 h-12 rounded-xl ${config.bgColor} flex items-center justify-center`}>
-                        <Icon className={`w-6 h-6 ${config.color}`} />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-gray-900 group-hover:text-[#0066ff] transition-colors">
-                          {doc.title}
-                        </h4>
-                        <p className="text-sm text-gray-500">{doc.description}</p>
-                      </div>
-                      <Download className="w-5 h-5 text-gray-400 group-hover:text-[#0066ff] transition-colors" />
-                    </a>
-                  );
-                })}
+                {groupedDocs.manual.map((doc) => (
+                  <SupportDocRow key={doc.id} doc={doc} categoryKey="manual" />
+                ))}
               </div>
 
               <h2 className="text-2xl font-bold text-gray-900 mb-6 mt-12">SDK & API文档</h2>
               <div className="space-y-4">
-                {[...groupedDocs.sdk, ...groupedDocs.api].map((doc) => {
-                  const config = categoryConfig[doc.category];
-                  const Icon = config.icon;
-                  return (
-                    <a
-                      key={doc.id}
-                      href={doc.downloadUrl}
-                      className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group"
-                    >
-                      <div className={`w-12 h-12 rounded-xl ${config.bgColor} flex items-center justify-center`}>
-                        <Icon className={`w-6 h-6 ${config.color}`} />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-gray-900 group-hover:text-[#0066ff] transition-colors">
-                          {doc.title}
-                        </h4>
-                        <p className="text-sm text-gray-500">{doc.description}</p>
-                      </div>
-                      <Download className="w-5 h-5 text-gray-400 group-hover:text-[#0066ff] transition-colors" />
-                    </a>
-                  );
-                })}
+                {[...groupedDocs.sdk, ...groupedDocs.api].map((doc) => (
+                  <SupportDocRow
+                    key={doc.id}
+                    doc={doc}
+                    categoryKey={doc.category === "sdk" ? "sdk" : "api"}
+                  />
+                ))}
               </div>
             </div>
 

@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { cases } from "@/data/mockData";
+import { resolveCaseImage } from "@/lib/siteMedia";
 import { TrendingUp, Target, CheckCircle } from "lucide-react";
 
 export default function CasesPage() {
@@ -29,7 +30,7 @@ export default function CasesPage() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={caseItem.imageUrl}
+                    src={resolveCaseImage(caseItem.id, caseItem.imageUrl)}
                     alt={caseItem.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

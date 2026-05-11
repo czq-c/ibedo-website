@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { teamMembers, timeline } from "@/data/mockData";
+import { resolveTeamAvatar } from "@/lib/siteMedia";
 import { Target, Eye, Heart, Award, Users, Lightbulb } from "lucide-react";
 
 export default function AboutPage() {
@@ -99,7 +100,7 @@ export default function AboutPage() {
               <div key={member.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                 <div className="aspect-square overflow-hidden">
                   <img
-                    src={member.avatar}
+                    src={resolveTeamAvatar(member.id, member.avatar)}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />

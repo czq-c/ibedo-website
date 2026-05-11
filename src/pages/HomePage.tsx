@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
+import SiteGallery from "@/components/home/SiteGallery";
 import BusinessOverview from "@/components/home/BusinessOverview";
 import Applications from "@/components/home/Applications";
 import ProductsPreview from "@/components/home/ProductsPreview";
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <Layout>
       <Hero />
+      <SiteGallery />
       <BusinessOverview />
       <Applications />
       <ProductsPreview />
