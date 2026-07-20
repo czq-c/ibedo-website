@@ -17,24 +17,22 @@ export default function HomePage() {
       <ProductsPreview />
       <NewsTicker />
 
-      <section className="py-24 bg-gradient-to-r from-[#0a1628] to-[#0f2744]">
+      <section className="bg-gradient-to-b from-primary-50 via-white to-accent-50 py-20 md:py-24">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-            准备好开启您的智能视觉之旅了吗？
+          <h2 className="font-display text-2xl font-semibold text-slate-900 md:text-3xl">
+            需要方案选型或样品支持？
           </h2>
-          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            无论您有任何技术问题或业务需求，我们的专业团队随时为您服务
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <p className="mx-auto mt-3 max-w-lg text-sm text-slate-600 md:text-base">留下需求与联系方式，我们会尽快与您对接。</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
               to="/contact"
-              className="px-8 py-4 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#0066ff]/30"
+              className="inline-flex rounded-full bg-xzh-mint px-8 py-3.5 text-sm font-semibold text-xzh-night transition hover:bg-xzh-mint-bright"
             >
-              立即咨询
+              联系鑫正辉
             </Link>
             <Link
               to="/support"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm transition-all duration-300 border border-white/20"
+              className="inline-flex rounded-full border border-slate-200 bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
             >
               技术支持
             </Link>

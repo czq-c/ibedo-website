@@ -1,6 +1,13 @@
 {
   "caseImages": {},
   "teamAvatars": {},
-  "gallery": [],
-  "heroBackground": null
+  "gallery": [
+    { "src": "/site-media/gallery/产线.webp", "alt": "投影仪", "caption": "TOF智能感知投影仪" },
+    { "src": "/site-media/gallery/无人机.png", "alt": "无人机", "caption": "无人机定高应用" },
+    { "src": "/site-media/gallery/扫地机器人.png", "alt": "扫地机器人", "caption": "扫地机器人避障" },
+    { "src": "/site-media/gallery/笔记本电脑人脸识别.png", "alt": "笔记本电脑人脸识别", "caption": "3D人脸识别解锁" },
+    { "src": "/site-media/gallery/人形机器人应用.png", "alt": "人形机器人应用", "caption": "人形机器人3D视觉" },
+    { "src": "/site-media/gallery/智能门锁.png", "alt": "智能门锁", "caption": "智能门锁3D感应解锁" }
+  ],
+  "heroBackground": "/site-media/gallery/hero-bg.webp"
 }

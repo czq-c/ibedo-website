@@ -1,57 +1,70 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
-    <footer className="bg-[#0a1628] text-gray-400">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-gradient-to-b from-primary-50 via-white to-accent-50 text-slate-600">
+      <div className="container mx-auto px-6 py-14">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center space-x-3 mb-6">
-              <div className="relative w-12 h-12">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff] to-[#00d4ff] rounded-lg transform rotate-45" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg -rotate-45">iB</span>
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-lg text-white">
+            <Link to="/" className="mb-5 flex items-center gap-3">
+              <img 
+                src="/site-media/ibedo-logo.png" 
+                alt="IBEDO Logo" 
+                className="h-10 w-auto"
+              />
+              <div className="flex flex-col leading-tight">
+                <span className="font-display text-base font-semibold text-slate-900">
                   鑫正辉科技
                 </span>
-                <span className="text-xs text-[#00d4ff] tracking-wider">iBEDO</span>
+                <span className="text-[0.65rem] font-medium uppercase tracking-[0.2em] text-primary-600">
+                  iBEDO
+                </span>
               </div>
             </Link>
-            <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              专注于精密光学设计，以"精密光学·感智未来"为使命，为客户提供激光TOF、结构光、双目视觉、摄像头等全方位产品解决方案。
+            <p className="mb-6 max-w-md text-sm leading-relaxed text-slate-600">
+              {t("about.slogan")}
             </p>
-            <div className="flex space-x-4">
-              {['微', '博', '知'].map((item, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 bg-white/5 hover:bg-[#0066ff] rounded-full flex items-center justify-center transition-colors duration-300"
-                >
-                  <span className="text-sm">{item}</span>
-                </a>
-              ))}
+            <div className="flex gap-3">
+              <a
+                href="#"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-xs text-slate-600 transition hover:bg-primary-50 hover:text-primary-700"
+              >
+                微
+              </a>
+              <a
+                href="#"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-xs text-slate-600 transition hover:bg-primary-50 hover:text-primary-700"
+              >
+                讯
+              </a>
+              <a
+                href="#"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-xs text-slate-600 transition hover:bg-primary-50 hover:text-primary-700"
+              >
+                知
+              </a>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4 text-lg">快速链接</h4>
-            <ul className="space-y-3">
+            <h4 className="mb-4 text-sm font-semibold tracking-wide text-slate-900">{t("footer.quickLinks")}</h4>
+            <ul className="space-y-2.5 text-sm">
               {[
-                { path: '/', label: '首页' },
-                { path: '/about', label: '关于我们' },
-                { path: '/products', label: '产品中心' },
-                { path: '/solutions', label: '解决方案' },
-                { path: '/cases', label: '成功案例' },
-                { path: '/support', label: '技术支持' },
+                { path: "/", label: t("common.home") },
+                { path: "/about", label: t("common.about") },
+                { path: "/products", label: t("common.products") },
+                { path: "/solutions", label: t("common.solutions") },
+                { path: "/cases", label: t("common.cases") },
+                { path: "/support", label: t("common.support") },
               ].map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="hover:text-[#00d4ff] transition-colors"
+                    className="transition-colors hover:text-primary-700"
                   >
                     {item.label}
                   </Link>
@@ -61,37 +74,43 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4 text-lg">联系方式</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <MapPin size={18} className="mt-1 flex-shrink-0 text-[#00d4ff]" />
-                <span className="text-sm">深圳市龙华区大浪街道上横朗社区上横朗第四工业区7号302</span>
+            <h4 className="mb-4 text-sm font-semibold tracking-wide text-slate-900">{t("contact.infoTitle")}</h4>
+            <ul className="space-y-4 text-sm">
+              <li className="flex gap-3">
+                <MapPin size={17} className="mt-0.5 shrink-0 text-primary-600" />
+                <span>{t("contact.addressText")}</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone size={18} className="flex-shrink-0 text-[#00d4ff]" />
-                <span className="text-sm">+86-0755-21030400</span>
+              <li className="flex items-center gap-3">
+                <Phone size={17} className="shrink-0 text-primary-600" />
+                <span>+86-0755-21030400</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone size={18} className="flex-shrink-0 text-[#00d4ff]" />
-                <span className="text-sm">13826593565</span>
+              <li className="flex items-center gap-3">
+                <Phone size={17} className="shrink-0 text-primary-600" />
+                <span>13826593565</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail size={18} className="flex-shrink-0 text-[#00d4ff]" />
-                <span className="text-sm">simon@ibedo.com.cn</span>
+              <li className="flex items-center gap-3">
+                <Mail size={17} className="shrink-0 text-primary-600" />
+                <span>simon@ibedo.com.cn</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-500">
-              &copy; 2024 鑫正辉科技（iBEDO）. 保留所有权利.
+        <div className="mt-12 border-t border-slate-200/70 pt-8">
+          <div className="flex flex-col items-center justify-between gap-4 text-xs text-slate-500 md:flex-row">
+            <p>
+              {t("footer.copyright", { year: new Date().getFullYear() })}
             </p>
-            <div className="flex items-center space-x-6 text-sm text-gray-500">
-              <a href="#" className="hover:text-[#00d4ff] transition-colors">隐私政策</a>
-              <a href="#" className="hover:text-[#00d4ff] transition-colors">使用条款</a>
-              <a href="#" className="hover:text-[#00d4ff] transition-colors">网站地图</a>
+            <div className="flex gap-6">
+              <a href="#" className="transition-colors hover:text-primary-700">
+                Privacy Policy
+              </a>
+              <a href="#" className="transition-colors hover:text-primary-700">
+                Terms of Service
+              </a>
+              <a href="#" className="transition-colors hover:text-primary-700">
+                Sitemap
+              </a>
             </div>
           </div>
         </div>

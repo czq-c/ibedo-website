@@ -14,6 +14,7 @@ export interface Product {
   fov?: string;
   wavelength?: string;
   applications: string[];
+  image?: string;
 }
 
 export interface Solution {
@@ -24,6 +25,7 @@ export interface Solution {
   description: string;
   features: string[];
   products: string[];
+  successCaseIds?: string[];
 }
 
 export interface Case {
@@ -63,4 +65,27 @@ export interface SupportDoc {
   title: string;
   description: string;
   downloadUrl?: string;
+}
+
+export interface SuccessCase {
+  id: string;
+  category:
+    | 'DTOF'
+    | 'ITOF'
+    | 'TOF'
+    | 'Camera'
+    | 'Structured Light'
+    | 'Thermal'
+    | 'DTOF/ITOF'
+    | 'Camera/Thermal'
+    | 'Camera/TOF'
+    | 'Camera/Thermal imaging';
+  title: string;
+  subtitle: string;
+  image: string;
+  features: string[];
+  solution: {
+    type: string;
+    description: string;
+  };
 }

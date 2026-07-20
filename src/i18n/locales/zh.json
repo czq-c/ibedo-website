@@ -1,0 +1,199 @@
+{
+  "common": {
+    "home": "首页",
+    "products": "产品中心",
+    "solutions": "解决方案",
+    "cases": "成功案例",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "support": "技术支持",
+    "language": "语言",
+    "chinese": "中文",
+    "english": "English",
+    "learnMore": "了解更多",
+    "viewDetails": "查看详情",
+    "submit": "提交",
+    "back": "返回",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功"
+  },
+  "nav": {
+    "consultation": "业务咨询"
+  },
+  "hero": {
+    "tagline": "精密光学 · 感智未来",
+    "title": "以精密光学设计为核心，专注提供激光、TOF、结构光、双目模块算法，摄像头产品的解决方案",
+    "subtitle1": "DTOF · ITOF · 结构光 · 双目视觉 · Camera模组",
+    "cta1": "探索产品",
+    "cta2": "联系我们",
+    "stats": {
+      "years": "年行业经验",
+      "products": "+产品型号",
+      "patents": "项专利技术",
+      "customers": "+企业客户"
+    }
+  },
+  "products": {
+    "title": "产品中心",
+    "subtitle": "全面的光学感知产品线，满足多样化应用需求",
+    "series": {
+      "dtof": "DTOF 激光测距系列",
+      "itof": "ITOF 深度相机系列",
+      "camera": "Camera 模组系列",
+      "structured-light": "结构光深度相机系列",
+      "thermal": "热成像相机系列",
+      "vcsel": "VCSEL 封装方案"
+    },
+    "specs": {
+      "chip": "芯片/封装类型",
+      "fov": "FOV",
+      "interface": "接口类型",
+      "resolution": "分辨率",
+      "range": "量程/工作距离",
+      "wavelength": "波长",
+      "frameRate": "帧率",
+      "size": "整体尺寸",
+      "status": "状态",
+      "application": "应用",
+      "fno": "FNO",
+      "power": "光功率",
+      "divergenceAngle": "发散角",
+      "packageSize": "封装尺寸",
+      "pdType": "PD 类型",
+      "accuracy": "精度",
+      "depthResolution": "深度图",
+      "rgbResolution": "成像分辨率"
+    },
+    "status": {
+      "mp": "量产",
+      "sample": "样品",
+      "plan": "计划中"
+    }
+  },
+  "solutions": {
+    "title": "解决方案",
+    "subtitle": "针对不同行业场景提供定制化光学感知方案",
+    "drone": {
+      "title": "无人机定高避障",
+      "description": "基于 DTOF/ITOF 技术的无人机定高和避障解决方案，支持暗光环境运行"
+    },
+    "projector": {
+      "title": "投影仪自动对焦",
+      "description": "无感快速对焦与梯形校正，3秒内完成校正"
+    },
+    "robot": {
+      "title": "机器人导航避障",
+      "description": "为服务机器人和工业机器人提供全方位的3D视觉感知"
+    },
+    "smartLock": {
+      "title": "智能门锁刷脸",
+      "description": "支持活体检测的3D人脸识别方案，安全可靠"
+    },
+    "arvr": {
+      "title": "AR/VR 交互",
+      "description": "高精度手势追踪和空间定位，沉浸式体验"
+    },
+    "industrial": {
+      "title": "工业检测",
+      "description": "亚毫米级精密测量和质量检测解决方案"
+    },
+    "cta": "立即咨询"
+  },
+  "cases": {
+    "title": "成功案例展示",
+    "subtitle": "深入了解各行业客户如何借助 iBEDO 的光学感知技术实现业务突破",
+    "categoryTitle": "{{category}} 成功案例",
+    "categorySubtitle": "基于 {{category}} 技术的解决方案与应用案例",
+    "solutionFeatures": "解决方案特点",
+    "moreFeatures": "+{{count}} 更多优势...",
+    "coverageTitle": "覆盖多行业的成功实践",
+    "coverageSubtitle": "从消费电子到工业自动化，从智能硬件到安防监控，我们的技术方案已在众多领域得到验证",
+    "categories": {
+      "dtof": "DTOF",
+      "itof": "ITOF",
+      "camera": "Camera",
+      "structuredLight": "Structured Light",
+      "thermal": "Thermal"
+    }
+  },
+  "about": {
+    "title": "关于我们",
+    "companyName": "鑫正辉科技（深圳）有限公司",
+    "companyNameEn": "iBEDO",
+    "slogan": "精密光学·感智未来",
+    "description": "公司拥有 100+ 人的专业团队，其中研发技术人员 26+ 人，算法专家 15+ 人，销售人员 7+ 人",
+    "vision": "企业愿景",
+    "visionText": "成为全球领先的光学感知解决方案提供商",
+    "mission": "企业使命",
+    "missionText": "以创新光学技术赋能智能设备，让感知更精准、更智能",
+    "values": "核心价值观",
+    "valuesList": [
+      "技术创新 - 持续研发投入，保持技术领先",
+      "品质至上 - 严格质量管控，确保产品可靠性",
+      "客户导向 - 深入理解需求，提供定制化方案",
+      "合作共赢 - 与合作伙伴共同成长"
+    ],
+    "team": "研发团队",
+    "teamSubtitle": "强大的技术团队",
+    "teamDescription": "公司拥有 100+ 人的专业团队，其中研发技术人员 26+ 人，算法专家 15+ 人，销售人员 7+ 人",
+    "certifications": "资质认证",
+    "distribution": "公司分布",
+    "distributionSubtitle": "全国布局 · 完善网络"
+  },
+  "contact": {
+    "title": "业务咨询",
+    "subtitle": "无论是产品咨询、技术支持还是商务合作，我们都期待与您交流",
+    "formTitle": "发送咨询",
+    "successTitle": "提交成功！",
+    "successMessage": "感谢您的咨询，我们的团队将在24小时内与您联系。",
+    "name": "姓名",
+    "namePlaceholder": "请输入您的姓名",
+    "company": "公司名称",
+    "companyPlaceholder": "请输入公司名称",
+    "email": "邮箱",
+    "emailPlaceholder": "请输入邮箱地址",
+    "phone": "电话",
+    "phonePlaceholder": "请输入电话号码",
+    "type": "咨询类型",
+    "types": {
+      "product": "产品咨询",
+      "solution": "解决方案",
+      "support": "技术支持",
+      "business": "商务合作",
+      "other": "其他"
+    },
+    "message": "留言内容",
+    "messagePlaceholder": "请详细描述您的需求...",
+    "submit": "提交咨询",
+    "infoTitle": "联系方式",
+    "address": "公司地址",
+    "addressText": "深圳市龙华区大浪街道上横朗社区上横朗第四工业区7号302",
+    "phoneLabel": "业务电话",
+    "emailLabel": "电子邮箱",
+    "workTime": "工作时间",
+    "workTimeText": "周一至周五 9:00-18:30",
+    "holidayNote": "节假日除外"
+  },
+  "footer": {
+    "companyName": "鑫正辉科技（深圳）有限公司",
+    "copyright": "© {{year}} 鑫正辉科技 版权所有",
+    "icp": "粤ICP备XXXXXXXX号",
+    "quickLinks": "快速链接",
+    "products": "产品中心",
+    "solutions": "解决方案",
+    "support": "技术支持",
+    "contactUs": "联系我们",
+    "followUs": "关注我们"
+  },
+  "applications": {
+    "drone": "无人机",
+    "smartLock": "智能门锁",
+    "serviceRobot": "服务机器人",
+    "smartHome": "智能家居",
+    "automotive": "汽车智能",
+    "industrial": "工业自动化",
+    "finance": "金融支付",
+    "security": "安防监控"
+  }
+}

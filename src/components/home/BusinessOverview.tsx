@@ -2,77 +2,44 @@ import { Link } from "react-router-dom";
 import { Radar, Layers, Scan, Camera, Thermometer, Zap } from "lucide-react";
 
 const technologies = [
-  {
-    icon: Radar,
-    title: 'DTOF直接飞行时间',
-    desc: 'SPAD技术，高精度远距离测距',
-    color: 'from-[#0066ff] to-[#00d4ff]',
-  },
-  {
-    icon: Layers,
-    title: 'ITOF间接飞行时间',
-    desc: '大视场角，高帧率深度感知',
-    color: 'from-[#00d4ff] to-[#00ff88]',
-  },
-  {
-    icon: Scan,
-    title: '结构光',
-    desc: '高精度3D重建，活体检测',
-    color: 'from-[#0066ff] to-[#8844ff]',
-  },
-  {
-    icon: Camera,
-    title: 'Camera摄像头',
-    desc: 'HD到50M像素，全场景覆盖',
-    color: 'from-[#ff6600] to-[#ff0066]',
-  },
-  {
-    icon: Thermometer,
-    title: '热成像',
-    desc: '-20℃~650℃测温范围',
-    color: 'from-[#ff3366] to-[#ff0066]',
-  },
-  {
-    icon: Zap,
-    title: 'VCSEL封装',
-    desc: '0.5W-16W功率可选',
-    color: 'from-[#ffcc00] to-[#ff6600]',
-  },
+  { icon: Radar, title: "DTOF 直接飞行时间", desc: "SPAD 技术，高精度远距离测距", series: "dtof" },
+  { icon: Layers, title: "ITOF 间接飞行时间", desc: "大视场角，高帧率深度感知", series: "itof" },
+  { icon: Scan, title: "结构光", desc: "高精度三维重建，活体检测", series: "structured-light" },
+  { icon: Camera, title: "Camera 摄像头", desc: "从高清到高像素，全场景覆盖", series: "camera" },
+  { icon: Thermometer, title: "热成像", desc: "宽温区测温与热分布分析", series: "thermal" },
+  { icon: Zap, title: "VCSEL 封装", desc: "多功率、多波长可定制", series: "vcsels" },
 ];
 
 export default function BusinessOverview() {
   return (
-    <section id="features" className="py-24 bg-[#0a1628]">
+    <section id="features" className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 bg-[#0066ff]/20 text-[#00d4ff] text-sm font-medium rounded-full mb-4">
+        <div className="mb-14 text-center">
+          <span className="mb-3 inline-block rounded-full border border-xzh-mint/25 bg-xzh-mint/10 px-4 py-1 text-xs font-medium text-xzh-mint-bright">
             核心技术
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-            六大技术路线
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+            技术路线
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            覆盖从芯片到模组的完整技术链条，为多行业提供定制化光学感知解决方案
+          <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 md:text-base">
+            从器件到模组，为多行业提供可落地的光学感知方案。
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {technologies.map((tech, index) => {
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {technologies.map((tech) => {
             const Icon = tech.icon;
             return (
               <div
-                key={index}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-[#0066ff]/50 transition-all duration-300 hover:-translate-y-1"
+                key={tech.title}
+                className="group rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:border-primary-200 hover:shadow-lg"
               >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  <Icon className="w-7 h-7 text-white" />
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100 text-primary-700 ring-1 ring-primary-200 transition group-hover:bg-primary-200">
+                  <Icon className="h-6 w-6" strokeWidth={1.75} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{tech.title}</h3>
-                <p className="text-gray-400">{tech.desc}</p>
-                <Link
-                  to="/products"
-                  className="inline-flex items-center text-[#00d4ff] text-sm font-medium mt-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                >
+                <h3 className="mb-2 text-lg font-semibold text-slate-900">{tech.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{tech.desc}</p>
+                <Link to={`/products?series=${tech.series}`} className="mt-4 inline-flex text-sm font-medium text-primary-700 transition hover:text-primary-600">
                   查看产品 →
                 </Link>
               </div>

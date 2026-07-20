@@ -1,48 +1,52 @@
 import { Plane, Lock, Bot, Home, Car, Factory, CreditCard, Shield } from "lucide-react";
 
 const icons: Record<string, React.ElementType> = {
-  Plane, Lock, Bot, Home, Car, Factory, CreditCard, Shield,
+  Plane,
+  Lock,
+  Bot,
+  Home,
+  Car,
+  Factory,
+  CreditCard,
+  Shield,
 };
 
 const applications = [
-  { name: '无人机', icon: 'Plane' },
-  { name: '智能门锁', icon: 'Lock' },
-  { name: '服务机器人', icon: 'Bot' },
-  { name: '智能家居', icon: 'Home' },
-  { name: '汽车智能', icon: 'Car' },
-  { name: '工业自动化', icon: 'Factory' },
-  { name: '金融支付', icon: 'CreditCard' },
-  { name: '安防监控', icon: 'Shield' },
+  { name: "无人机", icon: "Plane" },
+  { name: "智能门锁", icon: "Lock" },
+  { name: "服务机器人", icon: "Bot" },
+  { name: "智能家居", icon: "Home" },
+  { name: "汽车智能", icon: "Car" },
+  { name: "工业自动化", icon: "Factory" },
+  { name: "金融支付", icon: "CreditCard" },
+  { name: "安防监控", icon: "Shield" },
 ];
 
 export default function Applications() {
   return (
-    <section className="py-24 bg-gradient-to-b from-[#0a1628] to-[#0f2744]">
+    <section className="border-t border-slate-200 bg-gradient-to-b from-white via-primary-50 to-white py-24">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 bg-[#00d4ff]/20 text-[#00d4ff] text-sm font-medium rounded-full mb-4">
+        <div className="mb-14 text-center">
+          <span className="mb-3 inline-block rounded-full border border-xzh-mint/25 bg-xzh-mint/10 px-4 py-1 text-xs font-medium text-xzh-mint-bright">
             应用领域
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-            多行业深度覆盖
+          <h2 className="font-display text-3xl font-semibold text-slate-900 md:text-4xl">
+            多行业覆盖
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            我们的产品广泛应用于消费电子、机器人、智能家居、汽车、医疗、工业等多个领域
-          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {applications.map((app, index) => {
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+          {applications.map((app) => {
             const Icon = icons[app.icon] || Bot;
             return (
               <div
-                key={index}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:border-[#00d4ff]/50 hover:bg-[#00d4ff]/10 transition-all duration-300 cursor-pointer"
+                key={app.name}
+                className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:border-primary-200 hover:shadow-lg md:p-8"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary-100 text-primary-700 ring-1 ring-primary-200 transition group-hover:bg-primary-200 md:h-16 md:w-16">
+                  <Icon className="h-7 w-7 md:h-8 md:w-8" strokeWidth={1.75} />
                 </div>
-                <h3 className="text-lg font-semibold text-white">{app.name}</h3>
+                <h3 className="text-sm font-semibold text-slate-900 md:text-base">{app.name}</h3>
               </div>
             );
           })}

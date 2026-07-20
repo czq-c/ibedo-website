@@ -1,101 +1,116 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { companyInfo } from "@/data/mockData";
+import { siteContent } from "@/data/siteContent";
 import { getHeroBackground } from "@/lib/siteMedia";
 
 export default function Hero() {
+  const handleScrollToFeatures = () => {
+    const featuresSection = document.getElementById("features");
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   const heroBg = getHeroBackground();
+  const { brand } = siteContent;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#0f2744] to-[#0a1628]" />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-50 via-white to-accent-50" />
       {heroBg ? (
         <div className="absolute inset-0">
           <img
             src={heroBg}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover opacity-35"
+            className="absolute inset-0 h-full w-full object-cover opacity-[0.14]"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/90 via-[#0f2744]/85 to-[#0a1628]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/70 to-white/95" />
         </div>
       ) : null}
-      
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0066ff]/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#00d4ff]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0066ff]/10 rounded-full blur-3xl" />
-      </div>
 
-      <div className="absolute inset-0">
-        <svg className="w-full h-full opacity-20" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00d4ff" strokeWidth="0.5" opacity="0.3" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
+      <div
+        className="pointer-events-none absolute -left-32 top-1/3 h-[28rem] w-[28rem] rounded-full bg-xzh-mint/10 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -right-24 bottom-1/4 h-[22rem] w-[22rem] rounded-full bg-xzh-mint-bright/5 blur-3xl"
+        aria-hidden
+      />
 
-      <div className="relative container mx-auto px-6 py-32 text-center">
-        <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center px-5 py-2 bg-[#0066ff]/20 backdrop-blur-sm border border-[#0066ff]/30 rounded-full mb-8">
-            <span className="w-2 h-2 bg-[#00d4ff] rounded-full mr-3 animate-pulse" />
-            <span className="text-[#00d4ff] text-sm font-medium tracking-wide">
-              专注精密光学设计 12年
-            </span>
+      <div className="relative container mx-auto px-6 py-28 sm:py-32">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-1.5 text-xs font-medium text-primary-700 backdrop-blur-sm sm:text-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />
+                {brand.experienceBadge}
+              </div>
+
+              <h1 className="font-display text-4xl font-semibold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
+                {brand.slogan.split("·")[0]}
+                <span className="text-primary-600">·</span>
+                <span className="block text-3xl font-medium text-slate-700 sm:text-4xl md:text-5xl">
+                  {brand.slogan.split("·")[1] ?? "感智未来"}
+                </span>
+              </h1>
+
+              <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                <span className="text-slate-900">{brand.fullLegalName}</span>
+                <span className="text-slate-400"> — </span>
+                {brand.tagline}
+              </p>
+
+              <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 lg:justify-start">
+                <Link
+                  to="/products"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-xzh-mint px-8 py-3.5 text-sm font-semibold text-xzh-night shadow-lg shadow-xzh-mint/15 transition hover:bg-xzh-mint-bright"
+                >
+                  产品中心
+                  <ArrowRight size={18} className="transition group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  to="/solutions"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white/70 px-8 py-3.5 text-sm font-semibold text-slate-700 backdrop-blur-sm transition hover:border-slate-300 hover:bg-white"
+                >
+                  解决方案
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-xzh-mint/20 to-xzh-mint-bright/20 rounded-3xl blur-2xl" />
+                <img
+                  src="/site-media/gallery/hero-bg.webp"
+                  alt="TOF智能感知技术"
+                  className="relative w-full max-w-md rounded-2xl shadow-2xl"
+                />
+              </div>
+            </div>
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-white via-[#00d4ff] to-white bg-clip-text text-transparent">
-              精密光学
-            </span>
-            <br />
-            <span className="text-4xl md:text-5xl lg:text-6xl">感智未来</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            以精密光学设计为核心，提供激光TOF、结构光、双目视觉、摄像头产品解决方案
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link
-              to="/products"
-              className="group px-8 py-4 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] text-white font-semibold rounded-full transition-all duration-300 flex items-center shadow-lg shadow-[#0066ff]/30 hover:shadow-xl hover:shadow-[#0066ff]/40 hover:scale-105"
-            >
-              探索产品中心
-              <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to="/solutions"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full backdrop-blur-sm transition-all duration-300 border border-white/20"
-            >
-              解决方案
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-8 border-t border-slate-200 pt-12 md:grid-cols-4">
             {[
-              { value: companyInfo.founded.toString(), label: '成立年份' },
-              { value: companyInfo.rdTeam.toString(), label: '研发团队' },
-              { value: companyInfo.patents.toString(), label: '专利技术' },
-              { value: companyInfo.employees.toString(), label: '员工规模' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+              { value: companyInfo.founded.toString(), label: "成立年份" },
+              { value: `${companyInfo.rdTeam}+`, label: "研发与算法" },
+              { value: `${companyInfo.patents}+`, label: "专利布局" },
+              { value: `${companyInfo.employees}+`, label: "团队规模" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-2xl font-semibold text-slate-900 md:text-3xl">{stat.value}</div>
+                <div className="mt-1 text-xs text-slate-500 sm:text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <Link 
-          to="#features" 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-400 hover:text-white transition-colors"
+        <button
+          onClick={handleScrollToFeatures}
+          className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center text-slate-500 transition hover:text-slate-700"
         >
-          <span className="text-sm mb-2">了解更多</span>
-          <ChevronDown className="w-6 h-6 animate-bounce" />
-        </Link>
+          <span className="mb-1 text-xs">向下浏览</span>
+          <ChevronDown className="h-5 w-5 animate-bounce" />
+        </button>
       </div>
     </section>
   );

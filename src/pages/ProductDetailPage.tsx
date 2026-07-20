@@ -35,22 +35,29 @@ export default function ProductDetailPage() {
 
   return (
     <Layout>
-      <section className="pt-32 pb-8 bg-gradient-to-br from-[#0a1628] via-[#0f2744] to-[#0a1628]">
+      <section className="pt-32 pb-8 bg-gradient-to-br from-primary-50 via-white to-accent-50">
         <div className="container mx-auto px-6">
           <Link
             to="/products"
-            className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-6"
+            className="inline-flex items-center text-slate-600 hover:text-slate-900 transition-colors mb-6"
           >
             <ArrowLeft size={20} className="mr-2" />
             返回产品中心
           </Link>
           <div className="flex flex-col lg:flex-row items-start gap-8">
             <div className="w-full lg:w-1/3">
-              <div className="aspect-square bg-gradient-to-br from-[#0a1628] to-[#0f2744] rounded-2xl flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff]/20 to-transparent" />
-                <div className="w-40 h-40 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                  <span className="text-6xl font-bold text-white/80">{product.model.slice(0, 4)}</span>
-                </div>
+              <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                {product.image ? (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-contain p-8"
+                  />
+                ) : (
+                  <div className="w-40 h-40 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 flex items-center justify-center">
+                    <span className="text-6xl font-bold text-slate-400">{product.model.slice(0, 4)}</span>
+                  </div>
+                )}
               </div>
             </div>
             <div className="flex-1">
@@ -58,10 +65,10 @@ export default function ProductDetailPage() {
                 <Icon size={14} className="mr-1" />
                 {config.name}
               </span>
-              <h1 className="text-4xl font-bold text-white mt-4 mb-2">{product.name}</h1>
-              <p className="text-2xl text-[#00d4ff] font-medium mb-4">{product.model}</p>
-              <p className="text-gray-300 text-lg mb-6">{product.shortDesc}</p>
-              <p className="text-gray-400 leading-relaxed mb-8">{product.description}</p>
+              <h1 className="text-4xl font-bold text-slate-900 mt-4 mb-2">{product.name}</h1>
+              <p className="text-2xl text-primary-600 font-medium mb-4">{product.model}</p>
+              <p className="text-slate-600 text-lg mb-6">{product.shortDesc}</p>
+              <p className="text-slate-500 leading-relaxed mb-8">{product.description}</p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
@@ -69,7 +76,7 @@ export default function ProductDetailPage() {
                 >
                   获取报价
                 </Link>
-                <button className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full transition-colors flex items-center gap-2">
+                <button className="px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-full transition-colors flex items-center gap-2 border border-slate-200">
                   <Download size={18} />
                   下载规格书
                 </button>
@@ -130,9 +137,9 @@ export default function ProductDetailPage() {
                 ))}
               </div>
 
-              <div className="bg-gradient-to-br from-[#0a1628] to-[#0f2744] rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-white mb-4">需要技术支持？</h3>
-                <p className="text-gray-300 text-sm mb-4">
+              <div className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6 border border-slate-200">
+                <h3 className="text-lg font-bold text-slate-900 mb-4">需要技术支持？</h3>
+                <p className="text-slate-600 text-sm mb-4">
                   我们的技术团队可以为您提供产品选型、技术支持和定制化方案。
                 </p>
                 <Link

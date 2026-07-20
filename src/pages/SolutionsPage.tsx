@@ -26,17 +26,15 @@ export default function SolutionsPage() {
 
   return (
     <Layout>
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#0a1628] via-[#0f2744] to-[#0a1628]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary-50 via-white to-accent-50">
         <div className="container mx-auto px-6 text-center">
-          <span className="inline-block px-4 py-1 bg-[#0066ff]/20 text-[#00d4ff] text-sm font-medium rounded-full mb-4">
+          <span className="inline-block px-4 py-1 border border-xzh-mint/25 bg-xzh-mint/10 text-primary-700 text-sm font-medium rounded-full mb-4">
             解决方案
           </span>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-slate-900 mb-6">
             行业应用解决方案
           </h1>
-          <p className="text-gray-300 text-xl max-w-3xl mx-auto">
-            基于丰富的产品矩阵和深厚的行业经验，为多领域提供定制化光学感知解决方案
-          </p>
+          <p className="text-slate-600 text-xl max-w-3xl mx-auto">基于丰富的产品矩阵和深厚的行业经验，为多领域提供定制化光学感知解决方案</p>
         </div>
       </section>
 
@@ -50,7 +48,7 @@ export default function SolutionsPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   activeCategory === cat
-                    ? 'bg-[#0066ff] text-white'
+                    ? 'bg-xzh-mint text-xzh-night'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
@@ -73,11 +71,11 @@ export default function SolutionsPage() {
                 >
                   <div className="p-8">
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0066ff] to-[#00d4ff] flex items-center justify-center flex-shrink-0">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-xzh-mint to-xzh-mint-bright flex items-center justify-center flex-shrink-0">
                         <Icon className="w-8 h-8 text-white" />
                       </div>
                       <div>
-                        <span className="inline-block px-3 py-1 bg-[#0066ff]/10 text-[#0066ff] text-xs font-medium rounded-full mb-2">
+                        <span className="inline-block px-3 py-1 bg-teal-50 text-teal-700 text-xs font-medium rounded-full mb-2">
                           {solution.category}
                         </span>
                         <h3 className="text-xl font-bold text-gray-900">{solution.title}</h3>
@@ -110,8 +108,12 @@ export default function SolutionsPage() {
                     </div>
 
                     <Link
-                      to="/cases"
-                      className="inline-flex items-center text-[#0066ff] font-semibold hover:text-[#0055dd] transition-colors group"
+                      to={
+                        solution.successCaseIds && solution.successCaseIds.length > 0
+                          ? { pathname: "/cases", search: `?solution=${encodeURIComponent(solution.id)}` }
+                          : "/cases"
+                      }
+                      className="inline-flex items-center text-teal-700 font-semibold hover:text-teal-800 transition-colors group"
                     >
                       查看相关案例
                       <ChevronRight size={18} className="ml-1 group-hover:translate-x-1 transition-transform" />
@@ -124,17 +126,13 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-r from-[#0a1628] to-[#0f2744]">
+      <section className="py-16 bg-gradient-to-r from-primary-50 via-white to-accent-50">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="font-display text-3xl font-bold text-white mb-4">
-            需要定制化解决方案？
-          </h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            我们的技术团队可以根据您的具体需求，提供一对一的专业咨询和定制化方案设计
-          </p>
+          <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">需要定制化解决方案？</h2>
+          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">我们的技术团队可以根据您的具体需求，提供一对一的专业咨询和定制化方案设计。</p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#0066ff] to-[#00d4ff] text-white font-semibold rounded-full hover:shadow-lg transition-all"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-xzh-mint to-xzh-mint-bright text-white font-semibold rounded-full hover:shadow-lg transition-all"
           >
             立即咨询
           </Link>

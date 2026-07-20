@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { products } from "@/data/mockData";
 import { Radar, Layers, Scan, Camera, Thermometer, Zap, Filter, LayoutGrid, Table2 } from "lucide-react";
@@ -26,7 +27,9 @@ const tableColumns = [
 ];
 
 export default function ProductsPage() {
-  const [activeSeries, setActiveSeries] = useState<ProductSeries | 'all'>('all');
+  const [searchParams] = useSearchParams();
+  const seriesParam = searchParams.get('series') as ProductSeries | null;
+  const [activeSeries, setActiveSeries] = useState<ProductSeries | 'all'>(seriesParam || 'all');
   const [viewMode, setViewMode] = useState<'card' | 'table'>('card');
 
   const filteredProducts = activeSeries === 'all'
@@ -35,15 +38,15 @@ export default function ProductsPage() {
 
   return (
     <Layout>
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#0a1628] via-[#0f2744] to-[#0a1628]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary-50 via-white to-accent-50">
         <div className="container mx-auto px-6 text-center">
-          <span className="inline-block px-4 py-1 bg-[#0066ff]/20 text-[#00d4ff] text-sm font-medium rounded-full mb-4">
+          <span className="inline-block px-4 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full mb-4">
             产品中心
           </span>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-slate-900 mb-6">
             全系列产品矩阵
           </h1>
-          <p className="text-gray-300 text-xl max-w-3xl mx-auto">
+          <p className="text-slate-600 text-xl max-w-3xl mx-auto">
             从芯片到模组，从测距到3D视觉，提供完整的精密光学产品解决方案
           </p>
         </div>
@@ -127,11 +130,19 @@ export default function ProductsPage() {
                     key={product.id}
                     className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
                   >
-                    <div className="relative h-56 bg-gradient-to-br from-[#0a1628] to-[#0f2744] flex items-center justify-center">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff]/10 to-transparent" />
-                      <div className="w-32 h-32 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span className="text-4xl font-bold text-white/80">{product.model.slice(0, 4)}</span>
-                      </div>
+                    <div className="relative h-56 bg-white flex items-center justify-center overflow-hidden border-b border-gray-100">
+                      <div className="absolute inset-0 bg-gradient-to-br from-sky-50/50 to-blue-50/30" />
+                      {product.image ? (
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform"
+                        />
+                      ) : (
+                        <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-sky-100 to-blue-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <span className="text-4xl font-bold text-sky-600">IBEDO</span>
+                        </div>
+                      )}
                       <span className={`absolute top-4 right-4 px-3 py-1 ${config.bgColor} ${config.color} text-xs font-semibold rounded-full flex items-center gap-1`}>
                         <Icon size={12} />
                         {config.name}
@@ -191,17 +202,17 @@ export default function ProductsPage() {
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-gradient-to-r from-[#0a1628] to-[#0f2744]">
+                  <thead className="bg-gradient-to-r from-primary-50 to-primary-100">
                     <tr>
                       {tableColumns.map((col) => (
                         <th
                           key={col.key}
-                          className="px-6 py-4 text-left text-sm font-semibold text-white whitespace-nowrap"
+                          className="px-6 py-4 text-left text-sm font-semibold text-slate-700 whitespace-nowrap"
                         >
                           {col.label}
                         </th>
                       ))}
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-white">
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-slate-700">
                         操作
                       </th>
                     </tr>

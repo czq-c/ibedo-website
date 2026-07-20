@@ -1,0 +1,199 @@
+{
+  "common": {
+    "home": "Home",
+    "products": "Products",
+    "solutions": "Solutions",
+    "cases": "Cases",
+    "about": "About Us",
+    "contact": "Contact",
+    "support": "Support",
+    "language": "Language",
+    "chinese": "中文",
+    "english": "English",
+    "learnMore": "Learn More",
+    "viewDetails": "View Details",
+    "submit": "Submit",
+    "back": "Back",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "nav": {
+    "consultation": "Business Consultation"
+  },
+  "hero": {
+    "tagline": "Precision Optics · Intelligent Future",
+    "title": "Core in precision optical design, specializing in laser, TOF, structured light, binocular module algorithms, and camera product solutions",
+    "subtitle1": "DTOF · ITOF · Structured Light · Binocular Vision · Camera Module",
+    "cta1": "Explore Products",
+    "cta2": "Contact Us",
+    "stats": {
+      "years": "Years of Experience",
+      "products": "+ Product Models",
+      "patents": "Patents & Technologies",
+      "customers": "+ Enterprise Customers"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Comprehensive optical sensing product line to meet diverse application needs",
+    "series": {
+      "dtof": "DTOF Laser Ranging Series",
+      "itof": "ITOF Depth Camera Series",
+      "camera": "Camera Module Series",
+      "structured-light": "Structured Light Depth Camera Series",
+      "thermal": "Thermal Imaging Camera Series",
+      "vcsel": "VCSEL Package Solutions"
+    },
+    "specs": {
+      "chip": "Chip/Package Type",
+      "fov": "FOV",
+      "interface": "Interface Type",
+      "resolution": "Resolution",
+      "range": "Range/Working Distance",
+      "wavelength": "Wavelength",
+      "frameRate": "Frame Rate",
+      "size": "Overall Size",
+      "status": "Status",
+      "application": "Application",
+      "fno": "FNO",
+      "power": "Optical Power",
+      "divergenceAngle": "Divergence Angle",
+      "packageSize": "Package Size",
+      "pdType": "PD Type",
+      "accuracy": "Accuracy",
+      "depthResolution": "Depth Map",
+      "rgbResolution": "RGB Resolution"
+    },
+    "status": {
+      "mp": "Mass Production",
+      "sample": "Sample",
+      "plan": "Planned"
+    }
+  },
+  "solutions": {
+    "title": "Solutions",
+    "subtitle": "Customized optical sensing solutions for different industry scenarios",
+    "drone": {
+      "title": "Drone Altitude Hold & Obstacle Avoidance",
+      "description": "DTOF/ITOF-based drone altitude hold and obstacle avoidance solution, supporting low-light operation"
+    },
+    "projector": {
+      "title": "Projector Auto Focus",
+      "description": "Seamless fast focus and keystone correction, completed within 3 seconds"
+    },
+    "robot": {
+      "title": "Robot Navigation & Obstacle Avoidance",
+      "description": "Comprehensive 3D visual sensing for service and industrial robots"
+    },
+    "smartLock": {
+      "title": "Smart Lock Face Recognition",
+      "description": "3D face recognition with liveness detection, secure and reliable"
+    },
+    "arvr": {
+      "title": "AR/VR Interaction",
+      "description": "High-precision hand tracking and spatial positioning for immersive experience"
+    },
+    "industrial": {
+      "title": "Industrial Inspection",
+      "description": "Sub-millimeter precision measurement and quality inspection solutions"
+    },
+    "cta": "Consult Now"
+  },
+  "cases": {
+    "title": "Success Cases",
+    "subtitle": "Discover how customers across industries achieve breakthroughs with iBEDO's optical sensing technology",
+    "categoryTitle": "{{category}} Success Cases",
+    "categorySubtitle": "Solutions and application cases based on {{category}} technology",
+    "solutionFeatures": "Solution Features",
+    "moreFeatures": "+{{count}} more advantages...",
+    "coverageTitle": "Successful Practices Across Industries",
+    "coverageSubtitle": "From consumer electronics to industrial automation, from smart hardware to security monitoring, our technology has been validated across numerous fields",
+    "categories": {
+      "dtof": "DTOF",
+      "itof": "ITOF",
+      "camera": "Camera",
+      "structuredLight": "Structured Light",
+      "thermal": "Thermal"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "companyName": "iBEDO Technology (Shenzhen) Co., Ltd.",
+    "companyNameEn": "iBEDO",
+    "slogan": "Precision Optics · Intelligent Future",
+    "description": "Company has a professional team of 100+ people, including 26+ R&D technical personnel, 15+ algorithm experts, and 7+ sales personnel",
+    "vision": "Vision",
+    "visionText": "To become a global leading provider of optical sensing solutions",
+    "mission": "Mission",
+    "missionText": "Empowering smart devices with innovative optical technology for more precise and intelligent sensing",
+    "values": "Core Values",
+    "valuesList": [
+      "Technical Innovation - Continuous R&D investment to maintain technological leadership",
+      "Quality First - Strict quality control to ensure product reliability",
+      "Customer Oriented - Deep understanding of needs to provide customized solutions",
+      "Win-Win Cooperation - Growing together with partners"
+    ],
+    "team": "R&D Team",
+    "teamSubtitle": "Strong Technical Team",
+    "teamDescription": "Company has a professional team of 100+ people, including 26+ R&D technical personnel, 15+ algorithm experts, and 7+ sales personnel",
+    "certifications": "Certifications",
+    "distribution": "Company Distribution",
+    "distributionSubtitle": "National Layout · Complete Network"
+  },
+  "contact": {
+    "title": "Business Consultation",
+    "subtitle": "Whether it's product consultation, technical support, or business cooperation, we look forward to communicating with you",
+    "formTitle": "Send Inquiry",
+    "successTitle": "Successfully Submitted!",
+    "successMessage": "Thank you for your inquiry. Our team will contact you within 24 hours.",
+    "name": "Name",
+    "namePlaceholder": "Please enter your name",
+    "company": "Company Name",
+    "companyPlaceholder": "Please enter company name",
+    "email": "Email",
+    "emailPlaceholder": "Please enter email address",
+    "phone": "Phone",
+    "phonePlaceholder": "Please enter phone number",
+    "type": "Inquiry Type",
+    "types": {
+      "product": "Product Inquiry",
+      "solution": "Solution",
+      "support": "Technical Support",
+      "business": "Business Cooperation",
+      "other": "Other"
+    },
+    "message": "Message",
+    "messagePlaceholder": "Please describe your requirements in detail...",
+    "submit": "Submit Inquiry",
+    "infoTitle": "Contact Information",
+    "address": "Address",
+    "addressText": "Room 302, No.7, 4th Industrial Zone, Shanghenglang Community, Dalang Street, Longhua District, Shenzhen",
+    "phoneLabel": "Business Phone",
+    "emailLabel": "Email",
+    "workTime": "Working Hours",
+    "workTimeText": "Monday to Friday 9:00-18:30",
+    "holidayNote": "Except holidays"
+  },
+  "footer": {
+    "companyName": "iBEDO Technology (Shenzhen) Co., Ltd.",
+    "copyright": "© {{year}} iBEDO Technology. All Rights Reserved.",
+    "icp": "ICP License No. XXXXXXXX",
+    "quickLinks": "Quick Links",
+    "products": "Products",
+    "solutions": "Solutions",
+    "support": "Support",
+    "contactUs": "Contact Us",
+    "followUs": "Follow Us"
+  },
+  "applications": {
+    "drone": "Drone",
+    "smartLock": "Smart Lock",
+    "serviceRobot": "Service Robot",
+    "smartHome": "Smart Home",
+    "automotive": "Automotive Intelligence",
+    "industrial": "Industrial Automation",
+    "finance": "Financial Payment",
+    "security": "Security Monitoring"
+  }
+}

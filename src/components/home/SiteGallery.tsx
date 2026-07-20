@@ -8,15 +8,10 @@ export default function SiteGallery() {
     <section className="py-24 bg-white" id="gallery">
       <div className="container mx-auto px-6">
         <div className="text-center mb-14">
-          <span className="inline-block px-4 py-1 bg-[#0066ff]/10 text-[#0066ff] text-sm font-medium rounded-full mb-4">
+          <span className="mb-3 inline-block rounded-full bg-xzh-mint/10 px-4 py-1 text-xs font-medium text-teal-800">
             影像展示
           </span>
-          <h2 className="font-display text-4xl font-bold text-gray-900 mb-4">
-            企业与产品实景
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            以下内容来自站点图片目录，可在配置文件中增删图片条目
-          </p>
+          <h2 className="font-display mb-3 text-3xl font-semibold text-slate-900 md:text-4xl">企业应用与产品实景</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

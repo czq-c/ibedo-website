@@ -4,47 +4,44 @@ import { news } from "@/data/mockData";
 
 export default function NewsTicker() {
   return (
-    <section className="py-16 bg-white border-t border-gray-100">
+    <section className="border-t border-slate-100 bg-white py-16">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col gap-12 lg:flex-row">
           <div className="lg:w-1/4">
-            <span className="inline-block px-4 py-1 bg-[#0066ff]/10 text-[#0066ff] text-sm font-medium rounded-full mb-4">
+            <span className="mb-3 inline-block rounded-full bg-xzh-mint/10 px-4 py-1 text-xs font-medium text-teal-800">
               最新动态
             </span>
-            <h2 className="font-display text-3xl font-bold text-gray-900 mb-4">
-              新闻资讯
-            </h2>
-            <p className="text-gray-500 mb-6">
-              了解iBEDO最新产品发布、技术突破和行业合作动态
+            <h2 className="font-display text-2xl font-semibold text-slate-900 md:text-3xl">新闻资讯</h2>
+            <p className="mb-6 mt-3 text-sm text-slate-500">
+              了解鑫正辉科技的产品发布、技术进展与合作动态。
             </p>
             <Link
-              to="/news"
-              className="inline-flex items-center text-[#0066ff] font-semibold hover:text-[#0055dd] transition-colors group"
+              to="/about"
+              className="group inline-flex items-center text-sm font-semibold text-teal-700 transition hover:text-teal-600"
             >
-              查看全部新闻
-              <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              了解更多
+              <ArrowRight size={18} className="ml-1.5 transition group-hover:translate-x-0.5" />
             </Link>
           </div>
 
           <div className="lg:w-3/4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {news.slice(0, 4).map((item) => (
-                <Link
+                <div
                   key={item.id}
-                  to="/news"
-                  className="group bg-gray-50 rounded-xl p-6 hover:bg-[#0066ff]/5 transition-colors"
+                  className="group rounded-xl border border-slate-100 bg-slate-50/80 p-6 transition hover:border-teal-100 hover:bg-teal-50/30"
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="px-3 py-1 bg-[#00d4ff]/10 text-[#00d4ff] text-xs font-medium rounded-full">
+                  <div className="mb-3 flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-xzh-mint/10 px-3 py-0.5 text-xs font-medium text-teal-800">
                       {item.category}
                     </span>
-                    <span className="text-gray-400 text-sm">{item.date}</span>
+                    <span className="text-xs text-slate-400">{item.date}</span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-[#0066ff] transition-colors line-clamp-2">
+                  <h3 className="line-clamp-2 font-semibold text-slate-900 transition group-hover:text-teal-800">
                     {item.title}
                   </h3>
-                  <p className="text-gray-500 text-sm mt-2 line-clamp-2">{item.summary}</p>
-                </Link>
+                  <p className="mt-2 line-clamp-2 text-sm text-slate-500">{item.summary}</p>
+                </div>
               ))}
             </div>
           </div>
